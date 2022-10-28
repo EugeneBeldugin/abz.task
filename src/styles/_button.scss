@@ -1,0 +1,23 @@
+.btn {
+    background-color: $primary-color;
+    min-width: 100px;
+    padding: 0 18px;
+    height: 34px;
+    border: none;
+    border-radius: 80px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $hover-color;
+    }
+
+    &--disabled {
+        background-color: #B4B4B4;
+        color: #fff;
+        cursor: auto;
+
+        &:hover {
+            background-color: #B4B4B4;
+        }
+    }
+}

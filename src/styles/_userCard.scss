@@ -1,0 +1,48 @@
+.user-card {
+    width: 370px;
+    height: 254px;
+    border-radius: 10px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 20px;
+    margin-bottom: 30px;
+
+    &__photo {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+    }
+
+    &__name {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 1148px) {
+    .user-card {
+        width: 284px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .user-card {
+        width: 344px;
+    }
+}
+
+@media (max-width: 740px) {
+    .user-card {
+        width: 284px;
+    }
+}
+
+@media (max-width: 640px) {
+    .user-card {
+        width: 328px;
+        margin-bottom: 20px;
+    }
+}

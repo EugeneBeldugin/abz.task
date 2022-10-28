@@ -1,0 +1,43 @@
+.header {
+    background-color: #fff;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    
+    &__block {
+        display: flex;
+        justify-content: space-between;
+        width: 1170px;
+        margin: 0 auto;
+    }
+
+    &__btn-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 210px;
+    }
+}
+
+@media (max-width: 1148px) {
+    .header {
+        &__block {
+            padding: 0 60px;
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+    .header {
+        &__block {
+            padding: 0 32px;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .header {
+        &__block {
+            padding: 0 16px;
+        }
+    }
+}

@@ -1,0 +1,86 @@
+.block {
+    max-width: 1170px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    margin-bottom: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &--section {
+        padding: 164px 385px;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../public/Assets/pexels-alexandr-podvalny-1227513.jpeg');
+        background-repeat: no-repeat;
+        background-size: 219%;
+        background-position: 50% 80%;
+    }
+
+    &--users {
+        display: flex;
+        flex-flow: wrap;
+        justify-content: space-between;
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+
+    &--post {
+        margin-bottom: 100px;
+    }
+
+    &__success-img {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 1148px) {
+    .block {
+        &--users {
+            width: 906px;
+        }
+
+        &--section {
+            padding: 164px 322px;
+            background-size: 350% 165%;
+            background-position: 51% 98%;
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+    .block {
+        &--users {
+            width: 704px;
+        }
+
+        &--section {
+            padding: 89px 194px;
+            background-size: 350% 165%;
+            background-position: 51% 98%;
+        }
+    }
+}
+
+@media (max-width: 740px) {
+    .block {
+        width: 100vw;
+        padding: 0 16px;
+
+        &--users {
+            width: 600px;
+        }
+
+        &--section {
+            width: 100vw;
+            padding: 40px 16px;
+            background-size: 350% 165%;
+            background-position: 51% 98%;
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    .block--users {
+        width: 328px;
+    }
+}
