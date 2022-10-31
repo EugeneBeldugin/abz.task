@@ -1,4 +1,4 @@
-export const RegisteredBlock = () => {
+export const SuccessBlock = () => {
     return (
         <section className="block">
             <h2 className="title">User successfully registered</h2>

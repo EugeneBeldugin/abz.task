@@ -1,86 +1,63 @@
-.block {
+section {
+    margin-bottom: 140px;
+    text-align: center;
+}
+
+.container {
+    padding: 0 16px;
     max-width: 1170px;
     margin: 0 auto;
-    box-sizing: border-box;
-    margin-bottom: 140px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    &--section {
-        padding: 164px 385px;
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../public/Assets/pexels-alexandr-podvalny-1227513.jpeg');
-        background-repeat: no-repeat;
-        background-size: 219%;
-        background-position: 50% 80%;
-    }
 
     &--users {
-        display: flex;
-        flex-flow: wrap;
-        justify-content: space-between;
-        margin-top: 50px;
-        margin-bottom: 20px;
-    }
-
-    &--post {
-        margin-bottom: 100px;
-    }
-
-    &__success-img {
-        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(1fr auto);
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
     }
 }
 
-@media (max-width: 1148px) {
-    .block {
-        &--users {
-            width: 906px;
-        }
-
-        &--section {
-            padding: 164px 322px;
-            background-size: 350% 165%;
-            background-position: 51% 98%;
-        }
-    }
-}
-
-@media (max-width: 1023px) {
-    .block {
-        &--users {
-            width: 704px;
-        }
-
-        &--section {
-            padding: 89px 194px;
-            background-size: 350% 165%;
-            background-position: 51% 98%;
-        }
-    }
-}
-
-@media (max-width: 740px) {
-    .block {
-        width: 100vw;
-        padding: 0 16px;
+@media (min-width: 768px) {
+	.container {
+		padding-left: 32px;
+		padding-right: 32px;
 
         &--users {
-            width: 600px;
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 16px;
+            grid-row-gap: 16px;
         }
-
-        &--section {
-            width: 100vw;
-            padding: 40px 16px;
-            background-size: 350% 165%;
-            background-position: 51% 98%;
-        }
-    }
+	}
+	.banner__item {
+		padding-top: calc(60px + 89px);
+		padding-bottom: 163px;
+	}
 }
 
-@media (max-width: 640px) {
-    .block--users {
-        width: 328px;
-    }
+@media (min-width: 1024px) {
+	.container {
+		padding-left: 60px;
+		padding-right: 60px;
+
+        &--users {
+            grid-template-columns: repeat(3, 1fr);
+            grid-column-gap: 29px;
+            grid-row-gap: 29px;
+        }
+	}
+	.banner__item {
+		padding-top: calc(60px + 164px);
+	}
+}
+
+.footer__block {
+    padding-top: 17px;
+    padding-bottom: 17px;
+    border-top: 1px solid #D0CFCF;
+}
+
+@media (min-width: 1200px) {
+	.container {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
 }

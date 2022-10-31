@@ -1,15 +1,16 @@
-export const Select = ({ text, id, selected, onSelectClick }) => {
+export const Select = ({ text, id, selected }) => {
     return (
-        <div onClick={() => onSelectClick(text, id)} className="checkbox-wrapper">
+
+        <div className="radio-item">
+
             {
-                selected === text ?
-                    <div className="checkbox checkbox--selected">
-                        <div></div>
-                    </div>
+                selected === id ?
+                    <input className="custom-radio" name="position" type="radio" id={id} value={id} defaultChecked />
                     :
-                    <div className="checkbox"></div>
+                    <input className="custom-radio" name="position" type="radio" id={id} value={id} />
             }
-            <span className="text">{text}</span>
+
+            <label htmlFor={id}>{text}</label>
         </div>
     )
 }

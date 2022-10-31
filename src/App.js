@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import './App.scss';
+import { Footer } from './components/Footer/Footer';
 import { Header } from './components/Header/Header';
 import { Heading } from './components/Heading/Heading';
-import { RegisteredBlock } from './components/RegisteredBlock/RegisteredBlock';
+import { SuccessBlock } from './components/SuccessBlock/SuccessBlock';
 import { RegisterForm } from './components/RegisterForm/RegisterForm';
 import { UsersBlock } from './components/UsersBlock/UsersBlock';
 
@@ -12,12 +13,17 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Heading />
-      <UsersBlock isUpdate={update}/>
-      <RegisterForm onSuccess={setUpdate}/>
-      {
-        update && <RegisteredBlock />
-      }
+      <main>
+        <Heading />
+        <UsersBlock isUpdate={update}/>
+        {
+          update ?
+          <SuccessBlock />
+          :
+          <RegisterForm onSuccess={setUpdate}/>
+        }
+      </main>
+      <Footer />
     </div>
   );
 }

@@ -1,23 +1,28 @@
 .btn {
-    background-color: $primary-color;
     min-width: 100px;
-    padding: 0 18px;
     height: 34px;
-    border: none;
+    font-family: 'Nunito', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.87);
+    background: $primary-color;
+    border: 0;
     border-radius: 80px;
+    margin-top: 50px;
+    padding: 4px 19px;
     cursor: pointer;
 
     &:hover {
-        background-color: $hover-color;
+        background: $hover-color;
     }
 
     &--disabled {
-        background-color: #B4B4B4;
         color: #fff;
-        cursor: auto;
+        background: $disabled-color;
 
         &:hover {
-            background-color: #B4B4B4;
+            background: $disabled-color; 
         }
     }
 }

@@ -7,7 +7,7 @@ const sortUsersByDate = (a, b) => {
     return b.registration_timestamp - a.registration_timestamp
 }
 
-export const UsersBlock = ({isUpdate}) => {
+export const UsersBlock = ({ isUpdate }) => {
     const [users, setUsers] = useState([]);
     const [isError, setIsError] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
@@ -30,7 +30,7 @@ export const UsersBlock = ({isUpdate}) => {
     }, [usersCount, isUpdate])
 
     useEffect(() => {
-        if (users.length === 75) {
+        if (users.length >= 75) {
             setIsAllUsers(true)
         }
     }, [users])
@@ -45,18 +45,20 @@ export const UsersBlock = ({isUpdate}) => {
 
     return (
         <section className="block">
-            <Element name="users"></Element>
-            <h2 className="title">Working with GET request</h2>
+            <div className="container">
+                <Element name="users"></Element>
+                <h2 className="title">Working with GET request</h2>
 
-            {isLoading && <img className="preloader" alt="loading" src="./Assets/Preloader.png" />}
+                {isLoading && <img className="preloader" alt="loading" src="./Assets/Preloader.png" />}
 
-            {isError && <p>Something goes wrong, try later.</p>}
+                {isError && <p>Something goes wrong, try later.</p>}
 
-            <div className="block--users">
-                { users?.map((user) => <UserCard key={user.id} user={user}/>) }
+                <div className="container--users">
+                    {users?.map((user) => <UserCard key={user.id} user={user} />)}
+                </div>
+
+                <Button disabled={isAllUsers} onClick={onClick} text="Show more" />
             </div>
-
-            <Button disabled={isAllUsers} onClick={onClick} text="Show more" />
         </section>
     )
 }

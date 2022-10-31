@@ -3,13 +3,11 @@ import { Select } from "../Select/Select"
 
 export const SelectForm = ({ setOption }) => {
     const [positions, setPositions] = useState([]);
-    const [isError, setIsError] = useState(false);
-    const [isLoading, setIsLoading] = useState(true);
     const [selectedOption, setSelectedOption] = useState('')
 
-    const onSelectClick = (name, id) => {
+    const onSelectClick = (id) => {
         setOption(id);
-        setSelectedOption(name);
+        setSelectedOption(id);
     }
 
     useEffect(() => {
@@ -18,24 +16,17 @@ export const SelectForm = ({ setOption }) => {
             .then(data => {
                 if (data.success) {
                     setPositions(data.positions);
-                    setSelectedOption(data.positions[0].name)
-                    setIsLoading(false);
-                    setIsError(false);
-                } else {
-                    setIsError(true);
-                    setIsLoading(false);
+                    setSelectedOption(data.positions[0].id)
                 }
             })
-    }, []) 
+    }, [])
     return (
-        <div className="select-wrapper">
-            <span className="text text--select">Select your position</span>
+        <>
+            <p>Select your position</p>
+            <div onChange={(e) => onSelectClick(e.target.value)} className="radio-select">
+                {positions?.map(({ name, id }) => <Select key={id} text={name} selected={selectedOption} id={id} onSelectClick={onSelectClick} />)}
+            </div>
+        </>
 
-            {isLoading && <p>Loading ...</p>}
-
-            {isError && <p>Something goes wrong, try later.</p>}
-
-            {positions?.map(({ name, id }) => <Select key={id} text={name} selected={selectedOption} id={id} onSelectClick={onSelectClick} />)}
-        </div>
     )
 }
